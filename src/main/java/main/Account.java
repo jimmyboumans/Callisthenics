@@ -24,5 +24,6 @@ public class Account {
 			this.totalAmount -= amount;
 		
 	}
+
 	
 }
