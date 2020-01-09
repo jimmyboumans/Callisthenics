@@ -3,27 +3,35 @@ package main;
 import java.util.Date;
 
 public class Account {
-	private Integer totalAmount;
+	private Amount totalAmount;
+	private InOrder transactions;
 	
 	public Account(Amount amount){
-		this.totalAmount = 0;
+		this.totalAmount.value = 0.0;
 	}
 	
-	public Boolean deposit (Amount amount, Date date) {
-		try {
-			
-		}
-		catch(Error error) {
-			System.err.println("Le programme a rencontré");
-		}
-		this.totalAmount += amount;
+	public void deposit (Amount amount, Date date) {
+		this.totalAmount.value += amount.value;
+		this.transactions.transaction.put(date, amount);
+		
 	}
 	
 	public Boolean withdrawal (Amount amount, Date date) {
-		if (this.totalAmount >= amount)
-			this.totalAmount -= amount;
-		
+		if (this.totalAmount.value >= amount.value) {
+			this.totalAmount.value -= amount.value;
+			this.transactions.transaction.put(date, amount);
+			return true;
+		}
+		return false;
 	}
+		
+
+	@Override
+	public String toString() {
+		return "Account [totalAmount=" + totalAmount + "]";
+	}
+	
+	
 
 	
 }
