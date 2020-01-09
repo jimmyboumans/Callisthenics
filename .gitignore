@@ -21,3 +21,15 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+# fichiers maven a ignorer
+target
+
+# fichiers Eclipse a ignorer
+.classpath
+.project
+.settings
+
+# fichiers Itellij IDEA a ignorer
+.idea
+*.iml
